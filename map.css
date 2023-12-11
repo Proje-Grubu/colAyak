@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    background-color: #fff;
+    background-image: url('images/bugday2.png'); /* Arka plan resmi */
+    background-size: cover;
+    background-position: center;
+    height: 100rem; /* Ekran yüksekliği kadar alan kaplasın */  
+}
+svg path{
+    fill: #6D4C41;;
+    stroke: #eee;
+    stroke-width: .25;
+}
+svg path:hover{
+    fill: #ffb300;
+    transition: 0.6s;
+    cursor: pointer;
+}
+#navbar-change{
+    background-color: rgba(255, 255, 255, 1); /* Saydam arka plan */
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: background-color 0.3s ease; /* Geçiş efekti için */
+}
+#map{
+    margin-top: 7.5rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+#map-baslik{
+    color: #6D4C41;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+#slider-baslik{
+    margin-top: 3rem;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    border-radius: 10px;
+    padding-bottom: 1rem;
+}
+#slider{
+    margin-top: 2rem;
+    border-radius: 5px;
+}
+#slider img{
+    opacity: 0.6;
+}
+#slider button{
+    width: 15rem;
+    border-radius: 12px;
+}

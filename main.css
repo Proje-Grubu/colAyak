@@ -1,0 +1,201 @@
+.background-image {
+    background-image: url('images/bugday2.png'); /* Arka plan resmi */
+    background-size: cover;
+    background-position: center;
+    height: 15rem; /* Ekran yüksekliği kadar alan kaplasın */
+    border-bottom-right-radius: 20%;
+    border-bottom-left-radius: 20%; 
+} 
+#navbar{
+    background-color: rgba(255, 255, 255, 0.2); /* Saydam arka plan */
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: background-color 0.3s ease; /* Geçiş efekti için */
+}
+  
+.navbar-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+  
+.brand {
+    display: flex;
+    align-items: center; 
+}
+.logo {
+    display: inline-block;
+    width: 30px; /* İkon genişliği, istediğiniz boyuta ayarlayabilirsiniz */
+    margin-right: 10px; /* İkon ile metin arasındaki boşluk */
+    border-radius: 100px;
+    /* border-bottom: 3px solid #6D4C41; */
+    border: 1.5px solid #6D4C41;
+    padding: 0.3rem;
+}
+  
+.brand h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    color: #6D4C41; /* Yazı rengi */
+} 
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+  
+.nav-links li {
+    margin: 0 15px;
+}
+  
+.nav-links li a {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight:700;
+    text-decoration: none;
+    color: 		#6D4C41;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Geçiş efekti için */
+ }
+.nav-links li a:hover {
+    opacity: 0.7;
+    border-bottom: 5px solid #ffb300;
+    color: #6D4C41;
+}
+#home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+#home img{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    max-width: 20%;
+    height: auto;
+    border-radius: 100%;
+}
+#home .name{
+    text-align: center;
+}
+#home .name p{
+    color: #6D4C41;
+}
+#home .name h2{
+    margin-bottom: 0.75rem; /* 16 px'e göre bir küçültme yapıyor. */
+}
+#home .name p{
+    opacity: 0.6;
+    font-style: italic;
+}
+#home .kesfet{
+    color: #fff;
+    background-color: rgba(109, 76, 65, 0.7); /* Buradaki değerler #6D4C41 renginin RGB değerleridir ve sonraki değer (0.5) ise opaklık seviyesidir. */
+    width: 20rem;
+    border-radius: 50px;
+}
+#home .kesfet:hover{
+    opacity: 0.5;
+}
+/* CSS */
+.kesfet-button{
+  background: linear-gradient(to bottom right,  rgba(109, 76, 65, 0.7),  rgba(109, 76, 65, 0.7));
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+.kesfet-button:not([disabled]):focus {
+  box-shadow: 0 0 .25rem #dc9f11, -.125rem -.125rem 1rem #dc9f11, .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.kesfet-button:not([disabled]):hover {
+  box-shadow: 0 0 .25rem #dc9f11, -.125rem -.125rem 1rem #dc9f11, .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+#hakkımızda{
+    color: #6D4C41;
+    padding: 1rem;
+}
+#hakkımızda .items{
+    display: flex; /* yan yana getirmek için*/ 
+    justify-content: space-between;
+    align-items: center;
+}
+#hakkımızda .items .item{
+    width: 33%;
+    text-align: center;
+    padding: 0.5rem;
+}
+#hakkımızda .items .item button{
+    color: #ffb300;
+    border-color: #6D4C41;
+    width: 10rem;
+    border-radius: 12px;
+}
+#hakkımızda .items .item button:hover{
+    background-color: #6D4C41;
+    color: #fff;
+}
+#hakkımızda .items .item h3{
+    margin-top: 1rem;
+}
+#hakkımızda .items .item:hover{
+    color: grey;
+    opacity: 0.99;
+}
+#iletisim{
+    color:#6D4C41;
+    padding: 1rem;
+}
+#iletisim .iletisim-form .form-group input{
+    background-color: rgba(109, 76, 65, 0.1);
+}
+#iletisim .iletisim-form .form-group textarea{
+    background-color: rgba(109, 76, 65, 0.1);
+}
+#iletisim button{
+    background-color: rgba(109, 76, 65, 0.3);
+}
+#iletisim button:hover{
+    opacity: 0.6;
+}
+#iletisim .iletisim-form{
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+#iletisim .iletisim-form ul{
+    list-style-type: none;
+    display: flex;
+    margin-top: 1rem;
+    align-self: center;
+}
+#iletisim .iletisim-form ul li a{
+    padding: 1rem;
+    font-size: 2rem;  
+}
+#iletisim .iletisim-form ul li a:hover{
+    opacity: 0.6;  
+}

@@ -6,7 +6,7 @@
 }
 body{
     background-color: #fff;
-    background-image: url('images/bugday2.png'); /* Arka plan resmi */
+    background-image: url('../images/bugday2.png'); /* Arka plan resmi */
     background-size: cover;
     background-position: center;
     height: 100rem; /* Ekran yüksekliği kadar alan kaplasın */  

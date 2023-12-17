@@ -24,8 +24,8 @@
         <h1 class="heading-big">çölAyak</h1>
       </div>
       <ul class="nav-links">
-        <li><i class="fa-solid fa-house"></i><a href="#">Anasayfa</a></li>
-        <li><i class="fa-solid fa-map-location-dot"></i><a href="http://127.0.0.1:5500/public/html/map.html">Harita</a></li>
+        <li><i class="fa-solid fa-house"></i><a href="/">Anasayfa</a></li>
+        <li><i class="fa-solid fa-map-location-dot"></i><a href="/harita">Harita</a></li>
         <li><i class="fa-solid fa-address-card"></i><a href="#hakkımızda">Hakkımızda</a></li>
         <li><i class="fa-solid fa-phone-volume"></i><a href="#iletisim">İletişim</a></li>
       </ul>
@@ -71,7 +71,7 @@
 <hr>
 <footer id="iletisim">
   <div class="iletisim-form">
-      <form>
+      <form action="/" method="POST">
           <h4 class="text-center heading-medium">Bize Ulaşın</h4>
           <div class="form-group">
               <label for="name">İsim</label>
@@ -98,8 +98,7 @@
                 class="form-control" 
                 id="message"
                 rows="5" 
-                placeholder="Mesajını...">
-            </textarea>
+                placeholder="Mesajını..."></textarea>
         </div>
           <button type="submit" class="btn btn-block">Gönder</button>
       </form>

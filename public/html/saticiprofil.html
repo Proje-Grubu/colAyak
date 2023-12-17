@@ -37,10 +37,25 @@
             <img src="../images/market(1).jpg" alt="profilfotografi">
             <h2 class="heading-big">Gürbüz Market</h2>
             <ul class="first-bar">       
-                <li><button type="button" class="btn btn-outline-warning">Filtrele</button></li>
+              <button class="btn btn-warning" onclick="urunEkle()">Ürün Ekle</button>
+              <button class="btn btn-warning">Ürün Güncelle</button>
+              <button class="btn btn-warning">Ürün Sil</button>
+              <button class="btn btn-warning">Filtrele</button>
             </ul>
         </div>
+        <ul class="second-bar">
+          <input type="text" class="form-control" id="afisInput" placeholder="Afiş URL'si">
+          <input type="text" class="form-control" id="markaInput" placeholder="Marka adı">
+          <input type="text" class="form-control" id="isimInput" placeholder="Ürün adı">
+          <input type="text" class="form-control" id="fiyatInput" placeholder="Ürün fiyatı">
+          <input type="text" class="form-control" id="turInput" placeholder="Ürünün türü">
+        </ul>
         <hr>
+        <div class="urun-container" id="urunContainer">
+
+        </div>          
     </section>
+
+    <script src="../javascript/satici.js"></script>  
 </body>
 </html>

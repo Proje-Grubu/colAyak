@@ -1,0 +1,30 @@
+.background-image-kare{
+    background-image: url('../images/bugday2.png'); /* Arka plan resmi */
+    background-size: cover;
+    background-position: center;
+    height: 20rem; /* Ekran yüksekliği kadar alan kaplasın */
+}
+.resim-ustu-yazi {
+    position: relative;
+    text-align: center;
+}
+.resim-ustu-yazi .yazi {
+    position: absolute;
+    margin-top: 14rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Ortalama işlemi yaptım */
+    color: #6D4C41; /* Metin rengi */
+}
+.resim-ustu-yazi .yazi p{
+    color: rgba(109, 76, 65, 0.7); 
+}
+.form-inline{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 22%;
+}
+#form-inline-arama{
+    background-color: rgba(109, 76, 65, 0.2);
+    width: 50rem;
+}

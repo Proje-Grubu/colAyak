@@ -21,7 +21,7 @@ function urunKutusuOlustur(urun) {
     fiyat.textContent = `Fiyat: ${urun.fiyat} ₺`;
 
     const tur = document.createElement('p');
-    tur.textContent = `Tür: ${urun.fiyat}`;
+    tur.textContent = `Tür: ${urun.tur}`;
 
     div.appendChild(afis);
     div.appendChild(marka);

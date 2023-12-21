@@ -27,7 +27,7 @@
         <li><i class="fa-solid fa-house"></i><a href="/">Anasayfa</a></li>
         <li><i class="fa-solid fa-map-location-dot"></i><a href="/harita">Harita</a></li>
         <li><i class="fa-solid fa-address-card"></i><a href="#hakkımızda">Hakkımızda</a></li>
-        <li><i class="fa-solid fa-phone-volume"></i><a href="#iletisim">İletişim</a></li>
+        <li><i class="fa-solid fa-phone-volume"></i><a href="/iletisim">İletişim</a></li>
       </ul>
     </div>
   </nav>
@@ -38,7 +38,7 @@
         <h1 class="heading-big fontum" style="color: #6D4C41;"><span style="color: #ffb300;">Glutensiz </span>Yaşamın Öncüsüyüz</h1>
         <p class="heading-medium fontum">İnovasyon ve Lezzeti Buluşturan Tutkulu Bir Ekibiz!</p>
     </div>
-    <a href="http://127.0.0.1:5500/public/html/map.html">
+    <a href="/harita">
       <button class="kesfet-button" role="button">Keşfet</button>
     </a>
 </section>
@@ -100,7 +100,7 @@
                 rows="5" 
                 placeholder="Mesajını..."></textarea>
         </div>
-          <button type="submit" class="btn btn-block">Gönder</button>
+          <button id="gonder" type="submit" class="btn btn-block" onclick="login()">Gönder</button>
       </form>
       <ul>
           <li><a href="#"><i class="fab fa-facebook"></i></a></li>
@@ -112,5 +112,6 @@
 </footer>
 
 <script src="app.js"></script>
+<script src="../javascript/geribildirim.js"></script>
 </body>
 </html>

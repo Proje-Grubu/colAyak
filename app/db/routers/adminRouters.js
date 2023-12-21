@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Admin = require('../db/models/admin');
+const Admin = require('../models/admin');
 const AdminIslem = require('../db/models/adminislem');
 
 // Yeni bir admin eklemek için

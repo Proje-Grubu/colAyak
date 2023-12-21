@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Satici = require('../db/models/satici');
-const AdminIslem = require('../db/models/adminislem');
+const Satici = require('../models/satici');
+const AdminIslem = require('../models/adminislem');
 const { uploadFile, getFileStream } = require('../gridfs');
 
 // Yeni bir satıcı eklemek için
@@ -33,7 +33,7 @@ router.post('/satici-ekle', async (req, res) => {
 });
 
 // Bir satıcıyı güncellemek için
-router.put('/satici-guncelle/:id', async (req, res) => {
+router.put(`/satici-guncelle/:id`, async (req, res) => {
   try {
     
     const guncellenmisSatici = await Satici.findByIdAndUpdate(
@@ -104,4 +104,5 @@ router.get('/afiso/:saticiID', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
 module.exports = router;

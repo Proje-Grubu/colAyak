@@ -2,9 +2,9 @@
     background-image: url('../images/bugday2.png'); /* Arka plan resmi */
     background-size: cover;
     background-position: center;
-    height: 20rem; /* Ekran yüksekliği kadar alan kaplasın */
+    height: 17rem; /* Ekran yüksekliği kadar alan kaplasın */
     border-bottom-right-radius: 20%;
-    border-bottom-left-radius: 20%;
+    border-bottom-left-radius: 20%; 
 }
 .resim-ustu-yazi {
     position: relative;
@@ -21,12 +21,14 @@
 .resim-ustu-yazi .yazi p{
     color: rgba(109, 76, 65, 0.7); 
 }
-.form-inline{
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    margin-left: 22%;
+.harita-map {
+    display: flex;
+    justify-content: center; /* Yatayda ortalamak için */
+    align-items: center; /* Dikeyde ortalamak için */
+    /* İsteğe bağlı olarak diğer stillendirme özellikleri */
 }
-#form-inline-arama{
-    background-color: rgba(109, 76, 65, 0.2);
-    width: 50rem;
+
+/* iframe'e kenarlık vermek istemiyorsanız */
+.harita-map iframe {
+    border: none;
 }

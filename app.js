@@ -11,6 +11,10 @@ UserConnection();
 app.use('/', router);
 app.use('/harita', router);
 app.use('/satici', router);
+app.use('/colyak-nedir', router);
+app.use('/biz-kimiz', router);
+app.use('/admin-giris', router);
+app.use('/glutensiz-urunler-arama', router);
 app.use('/post', router);
 
 

@@ -19,10 +19,28 @@ router.get('/satici', (req, res) => {
     res.sendFile(__dirname + '/app/html/saticiprofil.html');
 });
 
-
-router.get('/post', (req, res) => {
-    res.sendFile(__dirname + '/app/db/routers/geribildirimRouters.js');
+router.get('/colyak-nedir', (req, res) => {
+    res.sendFile(__dirname + '/app/html/colayaknedir.html');
 });
+
+router.get('/biz-kimiz', (req, res) => {
+    res.sendFile(__dirname + '/app/html/bizkimiz.html');
+});
+
+router.get('/admin-giris', (req, res) => {
+    res.sendFile(__dirname + '/app/html/adminpanel.html');
+});
+
+router.get('/glutensiz-urunler-arama', (req, res) => {
+    res.sendFile(__dirname + '/app/html/glutensizurunler.html');
+});
+
+router.get('/', (req, res) => {
+    res.sendFile(__dirname + '/app/html/anasayfa.html');
+});
+
+
+
     
 
 

@@ -49,6 +49,9 @@ function urunEkle() {
     const fiyatInput = document.getElementById('fiyatInput').value;
     const turInput = document.getElementById('turInput').value;
 
+    
+
+
     // Yeni urun objesi oluşturma
     const yeniurun = {
     afis: afisInput,
@@ -63,7 +66,26 @@ function urunEkle() {
 
     // Yeni uruni gösterme
     mevcuturunleriGoster();
+
+    document.getElementById('afisInput').value = '';
+    document.getElementById('markaInput').value = '';
+    document.getElementById('isimInput').value = '';
+    document.getElementById('fiyatInput').value = '';
+    document.getElementById('turInput').value = '';
 }
 
 // Sayfa yüklendiğinde mevcut urunleri göster
 mevcuturunleriGoster();
+
+function haritayiGuncelle() {
+    // Kullanıcının girdiği değeri al
+    const yeniHaritaSrc = document.getElementById('haritaSrcInput').value;
+
+    // İframe'i seç
+    const haritaIframe = document.getElementById('haritaIframe');
+
+    // İframe'in src özelliğine kullanıcının girdiği URL'yi atayarak güncelle
+    haritaIframe.src = yeniHaritaSrc;
+
+    document.getElementById('haritaSrcInput').value = '';
+}

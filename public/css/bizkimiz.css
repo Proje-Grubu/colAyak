@@ -20,7 +20,7 @@
     color: rgba(109, 76, 65, 0.7); 
 }
 .container{
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     display: flex;
 }
 .container h3{
@@ -29,13 +29,9 @@
 }
 .info-img img{
     border-radius: 50%;
-    object-fit: cover;
-}
-.gif{
-    margin-top: 1rem;
 }
 .info-text{
-    margin-top: 3rem;
+    margin-top: 3.5rem;
     padding-left: 3rem;
 }
 .info-text h3{
@@ -44,22 +40,4 @@
 .info-text p{
     color: rgba(109, 76, 65, 0.7);
     padding-right: 2rem;
-}
-.img2{
-    margin-top: 4rem;
-}
-.gif2{
-    margin-top: 6rem;
-}
-.img3{
-    margin-top: 4.5rem;
-}
-.gif3{
-    margin-top: 8rem;
-}
-.img4{
-    margin-top: 7.5rem;
-}
-.gif4{
-    margin-top: 11rem;
 }

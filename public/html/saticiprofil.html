@@ -51,11 +51,18 @@
           <input type="text" class="form-control" id="turInput" placeholder="Ürünün türü">
         </ul>
         <hr>
+        <div class="harita-container">
+          <div class="input-container">
+            <input type="text" class="form-control" id="haritaSrcInput" placeholder="Harita URL'sini girin">
+            <button class="btn btn-warning" onclick="haritayiGuncelle()">Haritayı Güncelle</button>
+          </div>
+          <iframe id="haritaIframe" width="1100" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>             
+        <hr>
         <div class="urun-container" id="urunContainer">
 
         </div>          
     </section>
-
     <script src="../javascript/satici.js"></script>  
 </body>
 </html>

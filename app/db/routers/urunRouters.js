@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const Urun = require('../db/models/urun');
-const AdminIslem = require('../db/models/adminislem');
-const { uploadFile, getFileStream } = require('../db/gridfs');
+const Urun = require('../models/urun');
+const AdminIslem = require('../models/adminislem');
+const { uploadFile, getFileStream } = require('../gridfs');
 
 // Yeni bir ürün eklemek için
 router.post('/urun-ekle', async (req, res) => {

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const AdminIslem = require('../db/models/adminislem');
+const AdminIslem = require('../models/adminislem');
 
 // Admin işlemlerini getirmek için
 router.get('/adminislem-getir', async (req, res) => {

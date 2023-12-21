@@ -3,6 +3,8 @@
     background-size: cover;
     background-position: center;
     height: 20rem; /* Ekran yüksekliği kadar alan kaplasın */
+    border-bottom-right-radius: 20%;
+    border-bottom-left-radius: 20%;
 }
 .resim-ustu-yazi {
     position: relative;

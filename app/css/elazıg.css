@@ -32,3 +32,54 @@
 .harita-map iframe {
     border: none;
 }
+.form-inline{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 25%;
+}
+#form-inline-arama{
+    background-color: rgba(109, 76, 65, 0.2);
+    width: 40rem;
+}
+
+
+.container{
+    position: relative;
+    display: flex;
+    padding: 2rem;
+    z-index: 1;
+    background-color: rgba(109, 76, 65, 0.2);
+    position: relative;
+    margin-top: 2rem;
+    border-radius: 150px;
+}
+.container img{
+    width: 10rem;
+    height: auto;
+    border-radius: 100%;
+}
+.container h2{
+    margin-left: 2rem;
+    margin-bottom: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6D4C41;
+    border-bottom: #6D4C41;
+
+}
+.first-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+}
+
+.container button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.2rem;
+    margin-left: 30rem;
+    color:#6D4C41
+}

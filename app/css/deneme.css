@@ -1,0 +1,27 @@
+#sellersContainer{
+    
+    position: relative;
+    padding: 2rem;
+    z-index: 1;
+    background-color: rgba(109, 76, 65, 0.2);
+    position: relative;
+    margin-top: -5rem;
+    border-radius: 150px;  
+}
+img{
+    margin-left: 2rem;
+    width: 10rem;
+    height: auto;
+    border-radius: 100%;
+}
+/* Satıcı divleri içindeki elemanları yan yana hizalamak için gerekli stil */
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.container h2,
+.container ul {
+    margin: 20px;
+}

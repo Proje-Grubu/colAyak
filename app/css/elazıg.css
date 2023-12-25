@@ -41,8 +41,14 @@
     background-color: rgba(109, 76, 65, 0.2);
     width: 40rem;
 }
-
-
+.market-ekle{
+    margin-left: 10%;
+}
+.market-ekle input{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    background-color:rgba(109, 76, 65, 0.2) ;
+}
 .container{
     position: relative;
     display: flex;

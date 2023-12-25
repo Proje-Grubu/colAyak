@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>çölAyak | Admin Sayfası</title>
 
     <link rel="icon" href="../images/websitebugday.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/adminpage.css">
     <link rel="stylesheet" href="../css/saticiprofil.css">
 
     <link rel="stylesheet" media="(max-width:500px);" href="../css/mobile.css">
@@ -21,11 +22,15 @@
     <section>       
         <div class="container">
             <img src="../images/market(1).jpg" alt="profilfotografi">
-            <h2 class="heading-big">Gürbüz Market</h2>
+            <select id="marketSelect" onchange="changeMarket()" class="heading-medium">
+              <option selected>Market Seçiniz</option>
+              <option value="gurbuz">Gürbüz Market</option>
+              <option value="dogukan">Bim Market</option>
+            </select>        
             <ul class="first-bar">       
               <button class="btn btn-warning" onclick="urunEkle()">Ürün Ekle</button>
               <button class="btn btn-warning">Ürün Güncelle</button>
-              <button class="btn btn-warning">Ürün Sil</button>
+              <!-- <button class="btn btn-warning">Ürün Sil</button> -->
               <button class="btn btn-warning">Filtrele</button>
             </ul>
         </div>
@@ -44,11 +49,25 @@
           </div>
           <iframe id="haritaIframe" width="1100" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>             
-        <hr>
         <div class="urun-container" id="urunContainer">
 
         </div>          
     </section>
+    <div id="sellersContainer">
+      <!-- burada dinamik olarak satıcı bilgileri eklenecek -->
+    </div>
+    <hr>
+    <div id="admin-kutu">      
+      <label for="imageUrl">Market Resmi URL:</label>
+      <input type="text" id="imageUrlInput">
+      <label for="marketName">Market Adı:</label>
+      <input type="text" id="marketNameInput">
+      <label for="webAddress">Market Web Adresi:</label>
+      <input type="text" id="webAddressInput">
+      <button id="addSellerButton">Satıcı Ekle</button>
+    </div>
+    
+    <script src="../javascript/adminpage.js"></script>
     <script src="../javascript/satici.js"></script>  
     
 </body>

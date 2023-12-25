@@ -2,11 +2,11 @@ let urunBilgileri = [];
 
 const urunContainer = document.getElementById('urunContainer');
 
-    // Her bir urun bilgisi için HTML içeriği oluşturacak fonksiyon
-function urunKutusuOlustur(urun) {
+function urunKutusuOlustur(urun, index) {
     const div = document.createElement('div');
     div.classList.add('urun');
 
+    // Ürün görseli, başlık, fiyat vb. diğer özelliklerin oluşturulması
     const afis = document.createElement('img');
     afis.src = urun.afis;
     afis.alt = urun.isim;
@@ -23,25 +23,40 @@ function urunKutusuOlustur(urun) {
     const tur = document.createElement('p');
     tur.textContent = `Tür: ${urun.tur}`;
 
+    // Silme düğmesi oluşturma
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Sil';
+    deleteButton.classList.add('delete-button');
+
+    // Silme düğmesine tıklanınca urunuSil fonksiyonunu çağırma
+    deleteButton.addEventListener('click', function () {
+        urunuSil(index);
+    });
+
     div.appendChild(afis);
     div.appendChild(marka);
     div.appendChild(isim);
     div.appendChild(fiyat);
     div.appendChild(tur);
+    div.appendChild(deleteButton);
 
     return div;
 }
 
-// Mevcut urunleri görüntüleme
 function mevcuturunleriGoster() {
     urunContainer.innerHTML = '';
-    urunBilgileri.forEach(urun => {
-    const urunDiv = urunKutusuOlustur(urun);
-    urunContainer.appendChild(urunDiv);
+    urunBilgileri.forEach((urun, index) => {
+        const urunDiv = urunKutusuOlustur(urun, index);
+        urunContainer.appendChild(urunDiv);
     });
 }
 
-// Yeni urun ekleme fonksiyonu
+function urunuSil(index) {
+    urunBilgileri.splice(index, 1); // Veriyi kaldır
+    localStorage.setItem('urunBilgileri', JSON.stringify(urunBilgileri)); // Güncellenmiş veriyi tekrar sakla
+    mevcuturunleriGoster(); // Güncellenmiş veriyi ekranda göster
+}
+
 function urunEkle() {
     const afisInput = document.getElementById('afisInput').value;
     const markaInput = document.getElementById('markaInput').value;
@@ -49,42 +64,43 @@ function urunEkle() {
     const fiyatInput = document.getElementById('fiyatInput').value;
     const turInput = document.getElementById('turInput').value;
 
-    
-
-
-    // Yeni urun objesi oluşturma
     const yeniurun = {
-    afis: afisInput,
-    marka: markaInput,
-    isim: isimInput,
-    fiyat: fiyatInput,
-    tur: turInput
+        afis: afisInput,
+        marka: markaInput,
+        isim: isimInput,
+        fiyat: fiyatInput,
+        tur: turInput
     };
+    const queryString = `?afis=${encodeURIComponent(afisInput)}&marka=${encodeURIComponent(markaInput)}&isim=${encodeURIComponent(isimInput)}&fiyat=${encodeURIComponent(fiyatInput)}&tur=${encodeURIComponent(turInput)}`;
+    const newURL = 'adminpage.html' + queryString; // Yönlendirilecek sayfa
+    window.location.href = newURL; // Yönlendirme
 
-    // Yeni uruni urunBilgileri dizisine ekleme
     urunBilgileri.push(yeniurun);
 
-    // Yeni uruni gösterme
-    mevcuturunleriGoster();
+    localStorage.setItem('urunBilgileri', JSON.stringify(urunBilgileri)); // Yeni veriyi local storage'a ekle
+    mevcuturunleriGoster(); // Güncellenmiş veriyi ekranda göster
 
+    // Input alanlarını temizle
     document.getElementById('afisInput').value = '';
     document.getElementById('markaInput').value = '';
     document.getElementById('isimInput').value = '';
     document.getElementById('fiyatInput').value = '';
     document.getElementById('turInput').value = '';
+
 }
 
-// Sayfa yüklendiğinde mevcut urunleri göster
-mevcuturunleriGoster();
+// Local storage'dan verileri al ve sayfa yüklendiğinde göster
+window.addEventListener('load', function() {
+    const storedData = localStorage.getItem('urunBilgileri');
+    if (storedData) {
+        urunBilgileri = JSON.parse(storedData);
+        mevcuturunleriGoster();
+    }
+});
 
 function haritayiGuncelle() {
-    // Kullanıcının girdiği değeri al
     const yeniHaritaSrc = document.getElementById('haritaSrcInput').value;
-
-    // İframe'i seç
     const haritaIframe = document.getElementById('haritaIframe');
-
-    // İframe'in src özelliğine kullanıcının girdiği URL'yi atayarak güncelle
     haritaIframe.src = yeniHaritaSrc;
 
     document.getElementById('haritaSrcInput').value = '';

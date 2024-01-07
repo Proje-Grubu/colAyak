@@ -15,7 +15,9 @@ app.use('/colyak-nedir', router);
 app.use('/biz-kimiz', router);
 app.use('/admin-giris', router);
 app.use('/glutensiz-urunler-arama', router);
+app.use('/admin-urun-ekle',router)
 app.use('/post', router);
+
 
 
 

@@ -34,6 +34,9 @@ router.get('/admin-giris', (req, res) => {
 router.get('/glutensiz-urunler-arama', (req, res) => {
     res.sendFile(__dirname + '/app/html/glutensizurunler.html');
 });
+router.get('/admin-urun-ekle', (req, res) => {
+    res.sendFile(__dirname + '/app/html/adminpage.html');
+});
 
 router.get('/', (req, res) => {
     res.sendFile(__dirname + '/app/html/anasayfa.html');

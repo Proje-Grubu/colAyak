@@ -19,6 +19,7 @@ app.use('/admin-urun-ekle',router);
 app.use('/harita-elazig',router);
 app.use('/gurbuz-market',router);
 app.use('/a101-market',router);
+app.use('/admin-a101-market',router);
 app.use('/post', router);
 
 

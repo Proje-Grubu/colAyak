@@ -45,6 +45,9 @@ router.get('/gurbuz-market', (req, res) => {
 router.get('/a101-market', (req, res) => {
     res.sendFile(__dirname + '/app/html/a101market.html');
 });
+router.get('/admin-a101-market', (req, res) => {
+    res.sendFile(__dirname + '/app/html/adminpage2.html');
+});
 router.get('/', (req, res) => {
     res.sendFile(__dirname + '/app/html/anasayfa.html');
 });

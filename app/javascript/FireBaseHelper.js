@@ -177,22 +177,29 @@ function saticiListener() {
 }
 
 function addRow2(element, sayac) {
-    var tr = tblmap.insertRow();
-  
-    var tdSira = tr.insertCell();
-    var tdmarket = tr.insertCell();
-    var tdadres = tr.insertCell();
-    var tdurl = tr.insertCell();
-  
-    tdSira.appendChild(document.createTextNode(sayac));
-    tdmarket.appendChild(document.createTextNode(element.val()._market));
-    tdadres.appendChild(document.createTextNode(element.val()._adres));
-    tdurl.appendChild(document.createTextNode(element.val()._url));
-  
-    tr.appendChild(tdSira);
-    tr.appendChild(tdmarket);
-    tr.appendChild(tdadres);
-    tr.appendChild(tdurl);
-  
-    tblmap.appendChild(tr);
-  }
+  var tr = tblmap.insertRow();
+
+  var tdSira = tr.insertCell();
+  var tdmarket = tr.insertCell();
+  var tdadres = tr.insertCell();
+  var tdurl = tr.insertCell();
+
+  tdSira.appendChild(document.createTextNode(sayac));
+  tdmarket.appendChild(document.createTextNode(element.val()._market));
+  tdadres.appendChild(document.createTextNode(element.val()._adres));
+
+  var link = document.createElement('a');
+  link.href = element.val()._url;
+  link.textContent = 'Ziyaret Et';
+  link.classList.add('btn', 'btn-warning');
+  link.target = '_blank'; // Yeni sekmede açmak için
+
+  tdurl.appendChild(link);
+
+  tr.appendChild(tdSira);
+  tr.appendChild(tdmarket);
+  tr.appendChild(tdadres);
+  tr.appendChild(tdurl);
+
+  tblmap.appendChild(tr);
+}

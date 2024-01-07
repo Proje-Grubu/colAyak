@@ -20,15 +20,17 @@
         </div>
         <div class="kullaniciadi">
             <i class="fa-solid fa-user-tie user"></i>
-            <input  type="text" class="form-control" id="kullaniciadi" placeholder="Kullanıcı adınızı giriniz.">
+            <input  type="text" class="form-control" id="username" name="username" placeholder="Kullanıcı adınızı giriniz.">
         </div>
         <div class="sifre">
             <i class="fa-solid fa-key user"></i>
-            <input type="password" class="form-control" id="sifre" placeholder="Şifrenizi giriniz.">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Şifrenizi giriniz.">
         </div>
         <div class="login-button  kullanici">
-            <button type="button" class="btn btn-warning">Giriş Yap</button>
+            <button type="button" class="btn btn-warning" onclick="adminLogin">Giriş Yap</button>
         </div>
     </div> 
+
+    <script src="../javascript/adminlogin.js"></script>
 </body>
 </html>

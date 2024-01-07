@@ -29,18 +29,17 @@ const firebaseConfig = {
   }
   
   function gurbuzListener() {
-    const turlerRef = db.ref("onayliUrunleri"); // Örnek olarak "onayliUrunleri" referansı
+    const turlerRef = db.ref("onayliUrunleri");
   
     turlerRef.once('value')
       .then(snapshot => {
-        snapshot.forEach(turSnapshot => {
-          const turAdi = turSnapshot.key; // Tür adı (örneğin: "ayran")
+        let sayac = 1;
   
-          const markalar = turSnapshot.val();
-          Object.keys(markalar).forEach(markaKey => {
-            const marka = markalar[markaKey];
-            addRow(turAdi, marka);
-          });
+        snapshot.forEach(turSnapshot => {
+          const markalar = turSnapshot.val().markalar; // Markaları al
+          const tur = turSnapshot.val().tur;
+  
+          addRow(sayac++, markalar.join(", "), tur); // Markaları tabloya ekle
         });
       })
       .catch(err => {
@@ -48,21 +47,28 @@ const firebaseConfig = {
       });
   }
   
-  function addRow(tur, marka) {
+  function addRow(numara, markalar, tur) {
     const tr = document.createElement("tr");
+  
+    const tdNumara = document.createElement("td");
+    tdNumara.appendChild(document.createTextNode(numara));
+    tr.appendChild(tdNumara);
+  
+    const tdMarkalar = document.createElement("td");
+    tdMarkalar.appendChild(document.createTextNode(markalar));
+    tr.appendChild(tdMarkalar);
   
     const tdTur = document.createElement("td");
     tdTur.appendChild(document.createTextNode(tur));
-  
-    const tdMarka = document.createElement("td");
-    tdMarka.appendChild(document.createTextNode(marka));
-  
     tr.appendChild(tdTur);
-    tr.appendChild(tdMarka);
   
     table.appendChild(tr);
   }
   
+  document.addEventListener('DOMContentLoaded', gurbuzListener);
+  
+  
+
   // Sayfa yüklendiğinde verileri getir
   document.addEventListener('DOMContentLoaded', gurbuzListener);
 

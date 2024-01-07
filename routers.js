@@ -7,7 +7,6 @@ router.get('/', (req, res) => {
     res.sendFile(__dirname + '/app/html/anasayfa.html');
 });
 
-
 // Harita sayfası URl uzantısı
 router.get('/harita', (req, res) => {
     res.sendFile(__dirname + '/app/html/map.html');
@@ -33,7 +32,7 @@ router.get('/admin-giris', (req, res) => {
 router.get('/glutensiz-urunler-arama', (req, res) => {
     res.sendFile(__dirname + '/app/html/glutensizurunler.html');
 });
-router.get('/admin-urun-ekle', (req, res) => {
+router.get('/admin-sayfasi', (req, res) => {
     res.sendFile(__dirname + '/app/html/adminpage.html');
 });
 router.get('/harita-elazig', (req, res) => {
@@ -45,7 +44,7 @@ router.get('/gurbuz-market', (req, res) => {
 router.get('/a101-market', (req, res) => {
     res.sendFile(__dirname + '/app/html/a101market.html');
 });
-router.get('/admin-a101-market', (req, res) => {
+router.get('/admin-sayfasi2', (req, res) => {
     res.sendFile(__dirname + '/app/html/adminpage2.html');
 });
 router.get('/', (req, res) => {

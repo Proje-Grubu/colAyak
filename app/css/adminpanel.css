@@ -36,7 +36,7 @@ body{
     display: flex;
 }
 .sifre input{
-    margin-left: 1rem;
+    margin-left: 0.7rem;
     background-color: rgba(255, 179, 0, 0.2);
 }
 .container input:focus{
@@ -51,7 +51,7 @@ body{
     display: flex;
     justify-content: flex-start;
     margin-top: 0.5rem;
-    margin-left: 2rem;
+    margin-left: 2.7rem;
 }
 
 

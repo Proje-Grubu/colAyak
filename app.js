@@ -15,11 +15,11 @@ app.use('/colyak-nedir', router);
 app.use('/biz-kimiz', router);
 app.use('/admin-giris', router);
 app.use('/glutensiz-urunler-arama', router);
-app.use('/admin-urun-ekle',router);
+app.use('/admin-sayfasi',router);
 app.use('/harita-elazig',router);
 app.use('/gurbuz-market',router);
 app.use('/a101-market',router);
-app.use('/admin-a101-market',router);
+app.use('/admin-sayfasi2',router);
 app.use('/post', router);
 
 

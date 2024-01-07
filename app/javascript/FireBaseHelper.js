@@ -17,17 +17,6 @@ const auth = firebase.auth();
 
 const loginForm = document.querySelector('#login-form');
 
-auth.onAuthStateChanged(user => {
- /* if(user){
-    db.collection('guides').get().then(snapshot => {
-      setupGuides(snapshot.docs);
-    })
-  }
-  else{
-    setupGuides([]);
-  }*/
-});
-
 /*loginForm.addEventListener('click', (e) => {
   e.preventDefault();
 
@@ -45,19 +34,44 @@ function login(){
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
 
-  auth.signInWithEmailAndPassword(email, password).then(cred => {
-    const user = cred.user
+  auth.signInWithEmailAndPassword(email, password).then((user) => {
+    // Başarılı giriş
+    window.location.href = '/admin-sayfasi'; // Kullanıcıyı yönlendirilecek sayfa
+    console.log(user);
   })
   .catch((error) => {
-    // Hata durumu
-    var errorCode = error.code;
-    var errorMessage = error.message;
+    // Hatalı giriş
+    const errorCode = error.code;
+    const errorMessage = error.message;
     console.error(errorMessage);
-  });
+    alert("Giriş başarısız. Lütfen tekrar deneyin.");
+    //res.render(loginForm, { error: errorMessage }); // Hata mesajını kullanıcıya göster
+  })
 }
 
-function logout(){  auth.signOut()  }
+function logout(){ 
+  
+    auth.signOut()  
+    window.location.href = '/';
 
+}
+
+auth.onAuthStateChanged(user => {
+  /* if(user){
+     db.collection('guides').get().then(snapshot => {
+       setupGuides(snapshot.docs);
+     })
+   }
+   else{
+     setupGuides([]);
+   }*/
+   console.log(user);
+ });
+
+
+
+
+ 
 function gurbuzEkle(){
 
     var frm_marka = document.getElementById("frm_marka");

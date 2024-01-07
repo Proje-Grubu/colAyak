@@ -13,7 +13,7 @@ firebase.initializeApp(firebaseConfig);
 
 db = firebase.database();
 
-function ogrenciEkle(){
+function gurbuzEkle(){
 
     var frm_marka = document.getElementById("frm_marka");
     var frm_urun_adi = document.getElementById("frm_urun_adi");
@@ -56,7 +56,7 @@ class Glutensiz{
     }
 }
 
-function ogrenciListener(){
+function gurbuzListener(){
 
     var ref = db.ref("Glutensiz");
     var sayac = 1;

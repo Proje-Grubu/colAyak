@@ -39,6 +39,9 @@ router.get('/admin-urun-ekle', (req, res) => {
 router.get('/harita-elazig', (req, res) => {
     res.sendFile(__dirname + '/app/html/elazıgmap.html');
 });
+router.get('/gurbuz-market', (req, res) => {
+    res.sendFile(__dirname + '/app/html/gurbuzmarket.html');
+});
 
 router.get('/', (req, res) => {
     res.sendFile(__dirname + '/app/html/anasayfa.html');

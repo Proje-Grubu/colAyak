@@ -42,7 +42,9 @@ router.get('/harita-elazig', (req, res) => {
 router.get('/gurbuz-market', (req, res) => {
     res.sendFile(__dirname + '/app/html/gurbuzmarket.html');
 });
-
+router.get('/a101-market', (req, res) => {
+    res.sendFile(__dirname + '/app/html/a101market.html');
+});
 router.get('/', (req, res) => {
     res.sendFile(__dirname + '/app/html/anasayfa.html');
 });

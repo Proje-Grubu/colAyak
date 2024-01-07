@@ -13,6 +13,51 @@ firebase.initializeApp(firebaseConfig);
 
 db = firebase.database();
 
+const auth = firebase.auth();
+
+const loginForm = document.querySelector('#login-form');
+
+auth.onAuthStateChanged(user => {
+ /* if(user){
+    db.collection('guides').get().then(snapshot => {
+      setupGuides(snapshot.docs);
+    })
+  }
+  else{
+    setupGuides([]);
+  }*/
+});
+
+/*loginForm.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  const email = loginForm['email'].value;
+  const password = loginForm['password'].value;
+
+  console.log(email, password);
+
+  //auth.signInWithEmailAndPassword(email, password)
+
+})*/
+
+
+function login(){
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  auth.signInWithEmailAndPassword(email, password).then(cred => {
+    const user = cred.user
+  })
+  .catch((error) => {
+    // Hata durumu
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.error(errorMessage);
+  });
+}
+
+function logout(){  auth.signOut()  }
+
 function gurbuzEkle(){
 
     var frm_marka = document.getElementById("frm_marka");

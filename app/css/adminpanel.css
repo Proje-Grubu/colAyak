@@ -25,10 +25,10 @@ body{
 .container .user{
     font-size: 2rem;
 }
-.kullaniciadi{
+.mail{
     display: flex;
 }
-.kullaniciadi input{
+.mail input{
     margin-left: 1rem;
     background-color: rgba(255, 179, 0, 0.2);
 }

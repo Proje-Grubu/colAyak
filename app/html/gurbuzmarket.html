@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>çölAyak | Satıcı Profil</title>
+    <link rel="icon" href="../images/websitebugday.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/denemeliksayfa.css">
+    <link rel="stylesheet" href="../css/saticiprofil.css">
+
+    <link rel="stylesheet" media="(max-width:500px);" href="../css/mobile.css">
+</head>
+<body onload="ogrenciListener()">
+
+  <header class="background-image">
+    <nav id="navbar">
+      <div class="navbar-container">
+        <div class="brand">
+          <img src="../images/logomuz.png" alt="Logo" class="logo" style="width: 3rem; height: auto;">
+          <h1 class="heading-big">çölAyak</h1>
+        </div>
+        <ul class="nav-links">       
+          <li><i class="fa-solid fa-house"></i><a href="/">Anasayfa</a></li>
+          <li><i class="fa-solid fa-map-location-dot"></i><a href="http://127.0.0.1:5500/public/html/map.html">Harita</a></li>
+          <li><i class="fa-solid fa-address-card"></i><a href="http://127.0.0.1:5500/public/html/anasayfa.html#hakkımızda">Hakkımızda</a></li>
+          <li><i class="fa-solid fa-phone-volume"></i><a href="/iletisim">İletişim</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+    <section>       
+        <div class="container">
+            <img src="../images/market(1).jpg" alt="profilfotografi">
+            <h2 class="heading-big">Gürbüz Market</h2>
+            <ul class="first-bar">       
+              <button class="btn btn-warning">Filtrele</button>
+            </ul>
+        </div>
+        <ul class="second-bar">
+        </ul>
+        <hr>
+        <div class="harita-container">
+          <div class="input-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12459.389159974084!2d39.2174571!3d38.6753775!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4076c06523ac82b3%3A0xf813b2cef3dd5725!2zR8O8cmLDvHogS3VydXllbWnFnw!5e0!3m2!1str!2str!4v1704551044255!5m2!1str!2str" width="1200" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>             
+        <hr>
+            <div class="card">
+              <div class="card-body">
+                <!-- <h5 class="card-title">Öğrenci Listesi</h5> -->
+                <p class="card-text">
+                  <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Marka</th>
+                          <th scope="col">Ürün Adı</th>                          
+                          <th scope="col">Ürün Fiyatı</th>
+                          <th scope="col">Ürün Türü</th>                             
+                        </tr>
+                      </thead>
+                      <tbody id="myTable">
+                            
+                      </tbody>
+                    </table>
+                </p>
+              </div>
+            </div>        
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.0/firebase.js"></script>
+
+    <script src="../javascript/gurbuzmarket.js"></script>
+    <script src="../javascript/FireBaseHelper.js"></script>
+</body>
+</html>

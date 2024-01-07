@@ -1,0 +1,48 @@
+section{
+    margin-top: 7rem;
+}
+section select{
+    height: 3rem;
+    margin-left: 2rem;
+    margin-top: 3.5rem;
+    background-color: rgba(109, 76, 65, 0.2);
+    color: #6D4C41;
+}
+#admin-kutu {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 11rem;
+    margin-right: 11rem;
+  }
+  
+  #admin-kutu label,
+  #admin-kutu input,
+  #admin-kutu select,
+  #admin-kutu button {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+  }
+  #admin-kutu select{
+    text-align: center;
+  }
+  #admin-kutu select,
+  #admin-kutu input,
+  #admin-kutu button {
+    width: 100%;
+    color:#6D4C41;
+    background-color:rgba(109, 76, 65, 0.2) ;
+  }
+  #admin-kutu label{
+    color:#6D4C41;
+    background-color:rgba(109, 76, 65, 0.2) ;
+    width: 100%;
+  }
+  
+  

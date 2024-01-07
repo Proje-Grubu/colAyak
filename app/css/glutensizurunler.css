@@ -30,3 +30,30 @@
     background-color: rgba(109, 76, 65, 0.2);
     width: 40rem;
 }
+/* Örnek CSS stilleri */
+/* Örnek CSS stilleri */
+.table th,
+.table td {
+  max-width: 150px; /* Hücrelerin maksimum genişliği */
+  overflow: hidden; /* İçeriğin taşmasını önler */
+  text-overflow: ellipsis; /* İçeriği kısaltır ve üç nokta (...) ile gösterir */
+  white-space: nowrap; /* Satır sonu karakterlerini göstermez, tek satırda tutar */
+}
+
+/* Tür sütununun genişliğini belirleme */
+/* Tür ve Marka başlıklarının hizalaması */
+.table th:nth-child(2), /* Tür başlığı */
+.table th:nth-child(3) { /* Marka başlığı */
+  vertical-align: top; /* Başlıkları üste hizalar */
+}
+
+/* Tür ve Marka sütunlarının genişliği */
+.table td:nth-child(2), /* Tür sütunu */
+.table td:nth-child(3) { /* Marka sütunu */
+  max-width: 200px; /* Maksimum genişlik ayarı */
+  overflow: hidden; /* İçeriğin taşmasını önler */
+  text-overflow: ellipsis; /* İçeriği kısaltır ve üç nokta (...) ile gösterir */
+  white-space: nowrap; /* Satır sonu karakterlerini göstermez, tek satırda tutar */
+}
+
+  

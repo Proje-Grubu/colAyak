@@ -13,52 +13,7 @@ firebase.initializeApp(firebaseConfig);
 
 db = firebase.database();
 
-const auth = firebase.auth();
-
-const loginForm = document.querySelector('#login-form');
-
-auth.onAuthStateChanged(user => {
- /* if(user){
-    db.collection('guides').get().then(snapshot => {
-      setupGuides(snapshot.docs);
-    })
-  }
-  else{
-    setupGuides([]);
-  }*/
-});
-
-/*loginForm.addEventListener('click', (e) => {
-  e.preventDefault();
-
-  const email = loginForm['email'].value;
-  const password = loginForm['password'].value;
-
-  console.log(email, password);
-
-  //auth.signInWithEmailAndPassword(email, password)
-
-})*/
-
-
-function login(){
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-
-  auth.signInWithEmailAndPassword(email, password).then(cred => {
-    const user = cred.user
-  })
-  .catch((error) => {
-    // Hata durumu
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.error(errorMessage);
-  });
-}
-
-function logout(){  auth.signOut()  }
-
-function gurbuzEkle(){
+function a101Ekle(){
 
     var frm_marka = document.getElementById("frm_marka");
     var frm_urun_adi = document.getElementById("frm_urun_adi");
@@ -67,20 +22,20 @@ function gurbuzEkle(){
     var frm_urun_tur = document.getElementById("frm_urun_tur");
 
 
-    var glutensiz1 = new Glutensiz(frm_marka.value, frm_urun_adi.value, frm_urun_fiyat.value, frm_urun_tur.value);
+    var a101market1 = new a101market(frm_marka.value, frm_urun_adi.value, frm_urun_fiyat.value, frm_urun_tur.value);
 
-    var key = db.ref().child("Glutensiz").push().key;
+    var key = db.ref().child("a101market").push().key;
 
-    db.ref("Glutensiz/"+key).set(glutensiz1);
+    db.ref("a101market/"+key).set(a101market1);
 
     frm_marka.value = "";
     frm_urun_adi.value = "";
     frm_urun_fiyat.value = "";
     frm_urun_tur.value = "";
 }
-var tbl = document.getElementById("myTable");
+var tbl = document.getElementById("myTableA101");
 
-class Glutensiz{
+class a101market{
     constructor(marka,ad,fiyat,tur){
         this._marka = marka;
         this._ad = ad;
@@ -101,9 +56,9 @@ class Glutensiz{
     }
 }
 
-function gurbuzListener(){
+function a101Listener(){
 
-    var ref = db.ref("Glutensiz");
+    var ref = db.ref("a101market");
     var sayac = 1;
 
     ref.on('value', gotData, errData);
@@ -161,8 +116,6 @@ function addRow(element, sayac){
 
     tbl.appendChild(tr);
 }
-
-
 const dbmap = firebase.database();
 const tblmap = document.getElementById("myTableMap");
 

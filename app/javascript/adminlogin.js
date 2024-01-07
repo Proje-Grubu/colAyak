@@ -1,3 +1,5 @@
+import 'server-only';
+
 const firebaseConfig = {
     apiKey: "AIzaSyCdwTDFetVb4YeiGBSkwf0yMOkp8jWaWL0",
     authDomain: "denemeproje-6bdf2.firebaseapp.com",

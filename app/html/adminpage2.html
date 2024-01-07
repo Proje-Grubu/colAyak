@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Sayfası</title>
+    <link rel="icon" href="../images/websitebugday.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/glutensizurunler.css">
+    <link rel="stylesheet" href="../css/adminpage.css">
+    
+</head>
+<body>
+    <header class="background-image-kare">
+        <nav id="navbar">
+          <div class="navbar-container">
+            <div class="brand">
+              <img src="../images/logomuz.png" alt="Logo" class="logo" style="width: 3rem; height: auto;">
+              <h1 class="heading-big">çölAyak</h1>
+            </div>
+            <ul class="nav-links">
+              <li><i class="fa-solid fa-house"></i><a href="/">Anasayfa</a></li>
+              <li><i class="fa-solid fa-map-location-dot"></i><a href="/harita">Harita</a></li>
+              <li><i class="fa-solid fa-address-card"></i><a href="/biz-kimiz">Hakkımızda</a></li>
+              <li><i class="fa-solid fa-phone-volume"></i><a href="http://127.0.0.1:5000/#iletisim">İletişim</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="resim-ustu-yazi">
+            <div class="yazi">
+                <h1 class="heading-big">Admin Panel</h1>
+            </div>
+        </div>
+      </header>
+      <hr>
+      <div id="admin-kutu" class="flex-container">
+        <div>
+            <label for="imageUrl">Market Adını Giriniz:</label>
+            <input type="text" id="frm_market">
+        </div>
+        <div>
+            <label for="marketName">Adresi Giriniz:</label>
+            <input type="text" id="frm_adres">
+        </div>
+        <div>
+            <label for="webAddress">Web Url Giriniz:</label>
+            <input type="text" id="frm_url">
+        </div>
+        <div>
+          <a href="#" class="btn btn-warning" onclick="saticiEkle()">Satıcı Ekle</a>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-sm">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">A101 Market</h5>
+                  <p class="card-text">
+                    <form>
+                      <!-- ürün marka -->
+                        <div class="form-group">
+                          <input type="email" class="form-control" id="frm_marka" 
+                          aria-describedby="emailHelp" placeholder="Marka">
+                        </div>
+                        <!-- ürün adı -->
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="frm_urun_adi" placeholder="Ürün Adı" required>
+                        </div>
+                        <!-- ürün Fiyatı -->
+                        <div class="form-group">
+                          <input type="email" class="form-control" id="frm_urun_fiyat" 
+                          aria-describedby="emailHelp" placeholder="Ürün Fiyatı">
+                        </div>
+                        <!-- Ürün Türü -->
+                        <div class="form-group">
+                          <input type="email" class="form-control" id="frm_urun_tur" 
+                          aria-describedby="emailHelp" placeholder="Ürün Türü">
+                        </div>
+    
+                        <div class="form-group form-check">                       
+                        </div>
+                      </form>
+                  </p>
+                  <a href="#" class="btn btn-warning" onclick="a101Ekle()">Kaydet</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="button-container">
+            <a><button id="next-page" class="btn btn-warning"><i class="fa-solid fa-arrow-left"></i> &nbsp;  &nbsp; Çıkış Yap  </button></a>
+            <a href="http://127.0.0.1:5500/app/html/adminpage.html#"><button id="next-page1" class="btn btn-warning"><i class="fa-solid fa-backward"></i> &nbsp;  &nbsp; Önceki Sayfa</button></a>
+            <a><button id="next-page2" class="btn btn-warning">Diğer Sayfa  &nbsp;  &nbsp; <i class="fa-solid fa-forward"></i></button></a>
+          </div>
+          
+    
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    
+        <script src="https://www.gstatic.com/firebasejs/6.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.0/firebase.js"></script>
+
+        <script src="../javascript/a101market.js"></script>
+    
+</body>
+</html>

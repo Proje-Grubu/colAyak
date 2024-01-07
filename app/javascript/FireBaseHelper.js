@@ -116,3 +116,83 @@ function addRow(element, sayac){
 
     tbl.appendChild(tr);
 }
+
+
+const dbmap = firebase.database();
+const tblmap = document.getElementById("myTableMap");
+
+class Satici {
+  constructor(market, adres, url) {
+    this._market = market;
+    this._adres = adres;
+    this._url = url;
+  }
+  get market() {
+    return this._market;
+  }
+  get adres() {
+    return this._adres;
+  }
+  get url() {
+    return this._url;
+  }
+}
+
+function saticiEkle() {
+  var frm_market = document.getElementById("frm_market");
+  var frm_adres = document.getElementById("frm_adres");
+  var frm_url = document.getElementById("frm_url");
+
+  var satici1 = new Satici(
+    frm_market.value,
+    frm_adres.value,
+    frm_url.value
+  );
+
+  var keymap = dbmap.ref().child("Satici").push().key;
+
+  dbmap.ref("Satici/" + keymap).set(satici1);
+
+  frm_market.value = "";
+  frm_adres.value = "";
+  frm_url.value = "";
+}
+
+function saticiListener() {
+  var refmap = dbmap.ref("Satici");
+  var sayac = 1;
+
+  refmap.on('value', gotData, errData);
+
+  function gotData(data) {
+    tblmap.innerHTML = "";
+    data.forEach(element => {
+      addRow2(element, sayac++);
+    });
+  }
+
+  function errData(err) {
+    console.log(err);
+  }
+}
+
+function addRow2(element, sayac) {
+    var tr = tblmap.insertRow();
+  
+    var tdSira = tr.insertCell();
+    var tdmarket = tr.insertCell();
+    var tdadres = tr.insertCell();
+    var tdurl = tr.insertCell();
+  
+    tdSira.appendChild(document.createTextNode(sayac));
+    tdmarket.appendChild(document.createTextNode(element.val()._market));
+    tdadres.appendChild(document.createTextNode(element.val()._adres));
+    tdurl.appendChild(document.createTextNode(element.val()._url));
+  
+    tr.appendChild(tdSira);
+    tr.appendChild(tdmarket);
+    tr.appendChild(tdadres);
+    tr.appendChild(tdurl);
+  
+    tblmap.appendChild(tr);
+  }

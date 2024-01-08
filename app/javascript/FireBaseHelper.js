@@ -29,6 +29,8 @@ const loginForm = document.querySelector('#login-form');
 
 })*/
 
+//admin giriş fonksiyonu
+
 
 function login(){
   const email = document.getElementById('email').value;
@@ -60,6 +62,7 @@ auth.onAuthStateChanged(user => {
  });
 
 
+ //gürbuz markete ürün eklendi
  
 function gurbuzEkle(){
 

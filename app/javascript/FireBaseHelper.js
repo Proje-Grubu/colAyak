@@ -41,7 +41,6 @@ function login(){
   })
   .catch((error) => {
     // Hatalı giriş
-    const errorCode = error.code;
     const errorMessage = error.message;
     console.error(errorMessage);
     alert("Giriş başarısız. Lütfen tekrar deneyin.");
@@ -57,18 +56,8 @@ function logout(){
 }
 
 auth.onAuthStateChanged(user => {
-  /* if(user){
-     db.collection('guides').get().then(snapshot => {
-       setupGuides(snapshot.docs);
-     })
-   }
-   else{
-     setupGuides([]);
-   }*/
    console.log(user);
  });
-
-
 
 
  
@@ -80,12 +69,15 @@ function gurbuzEkle(){
     var frm_urun_fiyat = document.getElementById("frm_urun_fiyat");
     var frm_urun_tur = document.getElementById("frm_urun_tur");
 
+    if(frm_marka != null && frm_urun_adi != null && frm_urun_fiyat != null && frm_urun_tur != null)
+    {
+      var glutensiz1 = new Glutensiz(frm_marka.value, frm_urun_adi.value, frm_urun_fiyat.value, frm_urun_tur.value);
 
-    var glutensiz1 = new Glutensiz(frm_marka.value, frm_urun_adi.value, frm_urun_fiyat.value, frm_urun_tur.value);
-
-    var key = db.ref().child("Glutensiz").push().key;
-
-    db.ref("Glutensiz/"+key).set(glutensiz1);
+      var key = db.ref().child("Glutensiz").push().key;
+  
+      db.ref("Glutensiz/"+key).set(glutensiz1);
+  
+    }
 
     frm_marka.value = "";
     frm_urun_adi.value = "";
@@ -202,15 +194,25 @@ function saticiEkle() {
   var frm_adres = document.getElementById("frm_adres");
   var frm_url = document.getElementById("frm_url");
 
-  var satici1 = new Satici(
-    frm_market.value,
-    frm_adres.value,
-    frm_url.value
-  );
 
-  var keymap = dbmap.ref().child("Satici").push().key;
+  
+    if (frm_market != null && frm_adres != null && frm_url != null) {
 
-  dbmap.ref("Satici/" + keymap).set(satici1);
+      var keymap = dbmap.ref().child("Satici").push().key;
+      dbmap.ref("Satici/" + keymap).set(satici1);
+
+      var satici1 = new Satici(
+        frm_market.value,
+        frm_adres.value,
+        frm_url.value
+      );
+
+
+
+    } else {
+      alert ("Kayıt başarısız. Lütfen tüm alanları doldurunuz.")
+    }
+  
 
   frm_market.value = "";
   frm_adres.value = "";

@@ -18,7 +18,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "serve": "nodemon app.js"
+    "server": "nodemon app.js"
   },
   "keywords": [],
   "author": "",

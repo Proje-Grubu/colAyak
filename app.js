@@ -2,11 +2,48 @@ const express = require('express');
 const PORT = 5000;
 const app = express();
 const router = require('./routers');
-//const {UserConnection} = require('./app/db/dbConnect');
-app.use(express.static('app'));
+const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
 
+//const {UserConnection} = require('./app/db/dbConnect');
+
+app.use(express.static('app'));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //UserConnection();
+
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'proje1503@gmail.com', // E-posta gönderenin e-posta adresi
+      pass: 'dtma hlbi xopq abds' // E-posta gönderenin e-posta şifresi
+    }
+  });
+
+
+  app.post('/geri-bildirim', async(req, res) => {
+    const { name, email, message,  } = req.body;
+  
+    // E-posta gönderme seçenekleri
+    const mailOptions = {
+      from: 'proje1503@gmail.com', // Gönderen e-posta adresi
+      to: email, // Alıcı e-posta adresi (formdan alınan)
+      subject: 'Geri Bildirim',
+      text: `Geri bildiriminiz için teşekkür ederiz ${name}! \n Geri bildiriminiz: ${message}`
+    };
+  
+    // E-posta gönderme işlemi
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+
+      } else {
+        console.log('E-posta gönderildi: ' + info.response);
+        res.send('E-posta başarıyla gönderildi!');
+      }
+    });
+  });
+
+
 
 app.use('/', router);
 app.use('/harita', router);
@@ -29,3 +66,7 @@ app.listen(PORT,()=>
 {
     console.log(`Uygulama ${PORT} portunda dinleniyor.` );
 });
+
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+  });

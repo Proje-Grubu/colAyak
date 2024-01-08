@@ -72,7 +72,7 @@
 <hr>
 <footer id="iletisim">
   <div class="iletisim-form">
-      <form action="/" method="POST">
+      <form action="/geri-bildirim" method="POST">
           <h4 class="text-center heading-medium">Bize Ulaşın</h4>
           <div class="form-group">
               <label for="name">İsim</label>
@@ -101,7 +101,8 @@
                 rows="5" 
                 placeholder="Mesajını..."></textarea>
         </div>
-          <button id="gonder" type="submit" class="btn btn-block" onclick="login()">Gönder</button>
+          <a href="#"><button id="gonder" type="submit" class="btn btn-block">Gönder</button></a>
+
       </form>
       <ul>
           <li><a href="#"><i class="fab fa-facebook"></i></a></li>
@@ -113,6 +114,5 @@
 </footer>
 
 <script src="app.js"></script>
-<script src="../javascript/geribildirim.js"></script>
 </body>
 </html>

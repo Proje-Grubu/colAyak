@@ -31,7 +31,6 @@ const loginForm = document.querySelector('#login-form');
 
 //admin giriş fonksiyonu
 
-
 function login(){
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
@@ -109,6 +108,7 @@ class Glutensiz{
         return this._tur;
     }
 }
+
 
 function gurbuzListener(){
 
